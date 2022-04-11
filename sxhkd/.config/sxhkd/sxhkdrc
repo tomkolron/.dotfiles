@@ -1,0 +1,30 @@
+# terminal emulator - alacritty with tmux last session
+super + shift + Return 
+  alacritty -e tmux a
+
+# terminal emulator - just alacritty 
+super + shift + t
+  alacritty
+
+# rofi - grave=~ {clipboard, drun, windows,calculator}
+ctrl + grave ; {grave,1,Tab,c} 
+  rofi {-modi "clipboard:greenclip print" -show clipboard -run-command '\{cmd\}',-show drun -show-icons,-show window,-show calc -modi calc -no-show-match -no-sort -calc-command "echo -n '\{result\}' | xclip"}
+
+# spt - {open,play/pause}
+ctrl + grave ; s ; {o,p}
+  {gnome-terminal -- tmux a -t spt,spt playback -t}
+
+# list keybinding
+super + shift + slash
+  $HOME/Scripts/sxhkd-help.sh 
+
+# make sxhkd reload its configuration files
+super + shift + Escape
+	pkill -USR1 -x sxhkd
+
+# controls the brightness
+super + shift + Prior
+  sh ./scripts/brightness.sh 1
+
+super + shift + Next
+  sh ./scripts/brightness.sh -1
