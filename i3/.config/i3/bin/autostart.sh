@@ -1,10 +1,13 @@
 #!/bin/env bash
 
+#starts the green clip daemon
+greenclip daemon&
+
 # sets the display resolution
 xrandr -s 1920x1080
 
 # sets wallpaper using feh
-bash $HOME/.config/i3/.fehbg
+nitrogen --restore
 
 # polybar
 $HOME/.config/i3/bin/launchbar.sh
