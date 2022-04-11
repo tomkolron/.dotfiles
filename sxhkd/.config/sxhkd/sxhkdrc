@@ -24,7 +24,7 @@ super + shift + Escape
 
 # controls the brightness
 super + shift + Prior
-  sh ./scripts/brightness.sh 1
+  ~/.config/sxhkd/scripts/brightness.sh 1
 
 super + shift + Next
-  sh ./scripts/brightness.sh -1
+  ~/.config/sxhkd/scripts/brightness.sh -1
