@@ -39,7 +39,7 @@ dunst -config $HOME/.config/i3/dunstrc &
 xfce4-power-manager &
 
 while pgrep -u $UID -x picom >/dev/null; do sleep 1; done
-picom --config $HOME/.config/i3/picom.conf &
+picom --experimental-backends --config $HOME/.config/i3/picom.conf &
 
 # start polkit
 if [[ ! `pidof xfce-polkit` ]]; then
