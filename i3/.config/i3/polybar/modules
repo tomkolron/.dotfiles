@@ -11,7 +11,7 @@ format = <ramp> <label>
 format-background = ${color.yellow}
 
 label = %percentage%%
-label-foreground = ${color.background}
+label-foreground = ${color.text-color}
 
 ramp-0 = 
 ramp-1 = 
@@ -40,7 +40,7 @@ format-background = ${color.yellow}
 format-padding = 1
 
 label = %percentage%%
-label-foreground = ${color.background}
+label-foreground = ${color.text-color}
 
 ramp-0 = 
 ramp-1 = 
@@ -69,7 +69,7 @@ format-volume = <ramp-volume><label-volume>
 format-muted = <label-muted>
 format-muted-prefix = " "
 format-muted-prefix-font = 2
-format-muted-prefix-foreground = ${color.background}
+format-muted-prefix-foreground = ${color.text-color}
 format-muted-prefix-background = ${color.green}
 
 label-volume = "%percentage%% "
@@ -78,8 +78,8 @@ label-muted = "Mute"
 label-volume-background = ${color.green}
 label-muted-background = ${color.green}
 
-label-volume-foreground = ${color.background}
-label-muted-foreground = ${color.background}
+label-volume-foreground = ${color.text-color}
+label-muted-foreground = ${color.text-color}
 
 ramp-volume-0 = " "
 ramp-volume-1 = " "
@@ -92,7 +92,7 @@ ramp-volume-7 = " "
 ramp-volume-8 = " "
 ramp-volume-9 = " "
 ramp-volume-font = 2
-ramp-volume-foreground = ${color.background}
+ramp-volume-foreground = ${color.text-color}
 ramp-volume-background = ${color.green}
 
 ramp-headphones-0 = 
@@ -119,7 +119,7 @@ format-discharging = <ramp-capacity><label-discharging>
 format-full = <label-full>
 format-full-prefix = " "
 format-full-prefix-font = 2
-format-full-prefix-foreground = ${color.background}
+format-full-prefix-foreground = ${color.text-color}
 format-full-prefix-background = ${color.red}
 
 label-charging = %percentage%%
@@ -130,9 +130,9 @@ label-charging-background = ${color.red}
 label-discharging-background = ${color.red}
 label-full-background = ${color.red}
 
-label-charging-foreground = ${color.background}
-label-discharging-foreground = ${color.background}
-label-full-foreground = ${color.background}
+label-charging-foreground = ${color.text-color}
+label-discharging-foreground = ${color.text-color}
+label-full-foreground = ${color.text-color}
 
 ramp-capacity-0 = " "
 ramp-capacity-1 = " "
@@ -140,7 +140,7 @@ ramp-capacity-2 = " "
 ramp-capacity-3 = " "
 ramp-capacity-4 = " "
 ramp-capacity-font = 2
-ramp-capacity-foreground = ${color.background}
+ramp-capacity-foreground = ${color.text-color}
 ramp-capacity-background = ${color.red}
 
 animation-charging-0 = " "
@@ -149,7 +149,7 @@ animation-charging-2 = " "
 animation-charging-3 = " "
 animation-charging-4 = " "
 animation-charging-font = 2
-animation-charging-foreground = ${color.background}
+animation-charging-foreground = ${color.text-color}
 animation-charging-background = ${color.red}
 animation-charging-framerate = 750
 
@@ -217,8 +217,8 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-padding = 0
-format-prefix-foreground = ${color.background}
-format-foreground = ${color.background}
+format-prefix-foreground = ${color.text-color}
+format-foreground = ${color.text-color}
 format-background = ${color.green}
 label = "%{A1:alacritty -e gtop &:}%percentage%% %{A}"
 
@@ -232,11 +232,11 @@ time = "%I:%M %p"
 time-alt = "%A, %m/%d/%y"
 
 format-prefix = 
-format-prefix-foreground = ${color.background}
+format-prefix-foreground = ${color.text-color}
 format-prefix-background = ${color.blue}
 
 label = %time%
-label-foreground = ${color.background}
+label-foreground = ${color.text-color}
 label-background = ${color.blue}
 label-padding = 1
 
@@ -251,17 +251,17 @@ fixed-values = true
 
 format-mounted = <label-mounted>
 format-mounted-prefix = " "
-format-mounted-prefix-foreground = ${color.background}
+format-mounted-prefix-foreground = ${color.text-color}
 format-mounted-prefix-background = ${color.cyan}
 
 format-unmounted = <label-unmounted>
 format-unmounted-prefix = " "
-format-unmounted-prefix-foreground = ${color.background}
+format-unmounted-prefix-foreground = ${color.text-color}
 format-unmounted-prefix-background = ${color.cyan}
 
 label-mounted = "%{A1:alacritty -e ncdu &:} %free%%{A}"
 label-unmounted = " %mountpoint%: NA"
-label-mounted-foreground = ${color.background}
+label-mounted-foreground = ${color.text-color}
 
 label-mounted-background = ${color.cyan}
 label-unmounted-background = ${color.cyan}
@@ -275,8 +275,8 @@ interval = 1
 
 format = <label>
 format-prefix = " "
-format-prefix-foreground = ${color.background}
-format-foreground = ${color.background}
+format-prefix-foreground = ${color.text-color}
+format-foreground = ${color.text-color}
 format-background = ${color.yellow}
 
 label = "%{A1:alacritty -e htop &:} %mb_used% %{A}"
@@ -287,7 +287,7 @@ label = "%{A1:alacritty -e htop &:} %mb_used% %{A}"
 type=custom/text
 content = 
 content-font = 4
-content-foreground= ${color.background}
+content-foreground= ${color.text-color}
 content-background = ${color.blue} 
 content-padding=1
 click-left=def-dmenu
@@ -315,14 +315,14 @@ format-connected = <ramp-signal><label-connected>
 format-disconnected = <label-disconnected>
 format-disconnected-prefix = "睊 "
 format-disconnected-prefix-font = 2
-format-disconnected-foreground = ${color.background}
+format-disconnected-foreground = ${color.text-color}
 format-disconnected-background = ${color.magenta}
 
 label-connected = "%{A1:def-nmdmenu &:}%essid%%{A}"
 label-disconnected = "%{A1:def-nmdmenu &:}Offline%{A}"
 
-label-connected-foreground = ${color.background}
-label-disconnected-foreground = ${color.background}
+label-connected-foreground = ${color.text-color}
+label-disconnected-foreground = ${color.text-color}
 
 label-connected-background = ${color.magenta}
 label-disconnected-background = ${color.magenta}
@@ -332,7 +332,7 @@ ramp-signal-1 = " "
 ramp-signal-2 = " "
 ramp-signal-3 = " "
 ramp-signal-4 = " "
-ramp-signal-foreground = ${color.background}
+ramp-signal-foreground = ${color.text-color}
 ramp-signal-background = ${color.magenta}
 ramp-signal-font = 2
 
@@ -341,9 +341,20 @@ type=custom/script
 exec = curl -s -4 icanhazip.com 
 format = <label>
 format-prefix = "IP: "
-format-prefix-foreground = ${color.background}
-format-foreground = ${color.background}
+format-prefix-foreground = ${color.text-color}
+format-foreground = ${color.text-color}
 format-background = ${color.magenta}
 tail = true
 interval = 120
 click-left = curl -s -4 icanhazip.com | xclip -selection clipboard && notify-send "ip copied to cliboard"
+
+[module/device_battery]
+type=custom/script
+exec = sh ~/.config/i3/polybar/scripts/mouse_battery.sh
+format = <label>
+format-suffix = "%"
+format-suffix-foreground = ${color.text-color}
+format-foreground = ${color.text-color}
+format-background = ${color.red}
+tail = true
+interval = 5
