@@ -38,11 +38,11 @@ gaps outer 0
 client.background       #2b3339
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #81A1C1 #81A1C1 #D8DEE9 #a7c080   #81A1C1
-client.focused_inactive #61AFEF #61AFEF #2E3440 #a7c080   #61AFEF
-client.unfocused        #3B4252 #3B4252 #D8DEE9 #a7c080   #3B4252
-client.urgent           #BF616A #BF616A #D8DEE9 #a7c080   #BF616A
-client.placeholder      #2E3440 #2E3440 #D8DEE9 #a7c080   #2E3440
+client.focused          #81A1C1 #81A1C1 #D8DEE9 #a7c080   #81A1C100
+client.focused_inactive #61AFEF #61AFEF #2E3440 #a7c080   #61AFEF00
+client.unfocused        #3B4252 #3B4252 #D8DEE9 #a7c080   #3B425200
+client.urgent           #BF616A #BF616A #D8DEE9 #a7c080   #BF616A00
+client.placeholder      #2E3440 #2E3440 #D8DEE9 #a7c080   #2E344000
 
 
 ##~~~ Keybindings ~~~~~~~~~~~~~~~~~~~~~~
