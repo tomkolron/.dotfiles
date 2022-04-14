@@ -57,3 +57,4 @@ cp "$XFCE_TERM_PATH"/colorschemes/nord "$XFCE_TERM_PATH"/terminalrc
 CAVA_PATH="$HOME/.config/cava"
 cp "$CAVA_PATH"/colorschemes/nord "$CAVA_PATH"/config
 
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
