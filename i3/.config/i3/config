@@ -52,7 +52,7 @@ client.placeholder      #2E3440 #2E3440 #D8DEE9 #a7c080   #2E344000
 #bindsym $mod+Shift+c reload
 
 # Restart/Quit i3 session 
-bindsym Control+Shift+r restart
+bindsym $mod+Shift+r restart
 bindsym Control+Shift+q exec "pkill -KILL -u $USER"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
