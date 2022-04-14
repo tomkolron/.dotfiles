@@ -348,13 +348,19 @@ tail = true
 interval = 120
 click-left = curl -s -4 icanhazip.com | xclip -selection clipboard && notify-send "ip copied to cliboard"
 
+[module/powermenu]
+type=custom/text
+content = 
+content-foreground= ${color.text-color}
+content-background = ${color.blue} 
+content-padding=1
+click-left=logout.sh
+
 [module/device_battery]
 type=custom/script
-exec = sh ~/.config/i3/polybar/scripts/mouse_battery.sh
+exec = python3 ~/.config/i3/polybar/scripts/mouse_battery.py
 format = <label>
-format-suffix = "%"
-format-suffix-foreground = ${color.text-color}
 format-foreground = ${color.text-color}
 format-background = ${color.red}
 tail = true
-interval = 5
+interval = 30
