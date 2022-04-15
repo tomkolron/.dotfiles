@@ -3,11 +3,11 @@
 #starts the green clip daemon
 greenclip daemon&
 
-# sets the display resolution
-xrandr -s 1920x1080
-
 # sets wallpaper using feh
 nitrogen --restore
+
+#language toggle
+setxkbmap -option grp:alt_shift_toggle -layout us,il
 
 # polybar
 $HOME/.config/i3/bin/launchbar.sh
