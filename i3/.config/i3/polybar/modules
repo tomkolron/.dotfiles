@@ -363,4 +363,28 @@ format = <label>
 format-foreground = ${color.text-color}
 format-background = ${color.red}
 tail = true
-interval = 30
+interval = 5
+
+[module/custom_bright]
+type=custom/ipc
+hook-0 = sh ~/.config/sxhkd/scripts/brightness.sh 0
+scroll-up = sh ~/.config/sxhkd/scripts/brightness.sh 1
+scroll-down = sh ~/.config/sxhkd/scripts/brightness.sh -1
+format-prefix = " "
+format-prefix-foreground = ${color.text-color}
+format-foreground = ${color.text-color}
+format-background = ${color.yellow}
+format-padding = 1
+initial = 1
+
+[module/xkeyboard]
+type = internal/xkeyboard
+; List of indicators to ignore
+blacklist-0 = num lock
+blacklist-1 = scroll lock
+label-layout-padding = 0
+label-indicator-on = ^
+format = <label-layout><label-indicator>
+format-spacing = 0
+format-background = ${color.purple}
+format-foreground = ${color.text-color}
