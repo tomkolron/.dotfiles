@@ -354,7 +354,7 @@ content = 
 content-foreground= ${color.text-color}
 content-background = ${color.blue} 
 content-padding=1
-click-left=logout.sh
+click-left=rofi -show power-menu -modi power-menu:~/.config/i3/polybar/scripts/power-menu.sh
 
 [module/device_battery]
 type=custom/script
@@ -370,8 +370,8 @@ type=custom/ipc
 hook-0 = sh ~/.config/sxhkd/scripts/brightness.sh 0
 scroll-up = sh ~/.config/sxhkd/scripts/brightness.sh 1
 scroll-down = sh ~/.config/sxhkd/scripts/brightness.sh -1
-format-prefix = " "
-format-prefix-foreground = ${color.text-color}
+format-suffix = %
+format-suffix-foreground = ${color.text-color}
 format-foreground = ${color.text-color}
 format-background = ${color.yellow}
 format-padding = 1
@@ -388,3 +388,13 @@ format = <label-layout><label-indicator>
 format-spacing = 0
 format-background = ${color.purple}
 format-foreground = ${color.text-color}
+
+[module/cava]
+type = custom/script
+tail = true
+exec = $HOME/.config/i3/polybar/scripts/cava.sh
+format = <label>
+format-font = 5
+format-foreground = ${color.text-color}
+format-background = ${color.red}
+label = %output%
