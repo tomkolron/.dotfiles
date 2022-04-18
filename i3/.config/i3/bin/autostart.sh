@@ -1,7 +1,10 @@
 #!/bin/env bash
 
 #starts the green clip daemon
-greenclip daemon&
+greenclip daemon &
+
+#makes mouse disappear after 5 seconds
+unclutter -grab &
 
 # sets wallpaper using feh
 nitrogen --restore
@@ -20,10 +23,6 @@ killall -9 picom xfce4-power-manager ksuperkey dunst sxhkd conky eww
 
 # Launch Conkeww
 sed -i "s/colors\/color-.*/colors\/color-nord.yuck\")/g" $HOME/.config/conkeww/eww.yuck
-eww --config $HOME/.config/conkeww/ open conkeww-main
-
-# Launch Conky
-conky -c $HOME/.config/conky/axyl.conkyrc
 
 # sets superkey
 ksuperkey -e 'Super_L=Alt_L|F1' &
@@ -57,4 +56,3 @@ cp "$XFCE_TERM_PATH"/colorschemes/nord "$XFCE_TERM_PATH"/terminalrc
 CAVA_PATH="$HOME/.config/cava"
 cp "$CAVA_PATH"/colorschemes/nord "$CAVA_PATH"/config
 
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
