@@ -9,9 +9,6 @@ unclutter -grab &
 # sets wallpaper using feh
 nitrogen --restore
 
-# starts docker daemon
-sudo systemctl start docker
-
 #language toggle
 setxkbmap -option grp:alt_shift_toggle -layout us,il
 
