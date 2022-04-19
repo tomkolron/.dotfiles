@@ -399,3 +399,5 @@ format-foreground = ${color.text-color}
 format-background = ${color.red}
 label = %output%
 click-left = playerctl play-pause
+scroll-up = playerctl previous
+scroll-down = playerctl next
