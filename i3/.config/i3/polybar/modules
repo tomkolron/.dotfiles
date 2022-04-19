@@ -398,3 +398,4 @@ format-font = 5
 format-foreground = ${color.text-color}
 format-background = ${color.red}
 label = %output%
+click-left = playerctl play-pause
