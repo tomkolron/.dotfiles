@@ -1,13 +1,16 @@
 #!/bin/env bash
 
-#starts the green clip daemon
+# starts the green clip daemon
 greenclip daemon &
 
-#makes mouse disappear after 5 seconds
+# makes mouse disappear after 5 seconds
 unclutter -grab &
 
 # sets wallpaper using feh
 nitrogen --restore
+
+# starts docker daemon
+sudo systemctl start docker
 
 #language toggle
 setxkbmap -option grp:alt_shift_toggle -layout us,il
