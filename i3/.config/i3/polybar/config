@@ -44,14 +44,14 @@ padding = 0
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = "Hack Nerd Font:size=10;3"
+font-0 = "Hack Nerd Font:size=8;3"
 font-1 = "Hack Nerd Font:size=8;3"
 font-2 = "Hack Nerd Font:size=17;4"
 font-3 = "Hack Nerd Font:size=17;4"
 
 # Default
 modules-left = spacing BLD powermenu BRD dot GLD cpu YPL memory CPL filesystem CRD dot MLD ip MRD dot PLD xkeyboard PRD
-modules-center = LD i3 RD
+modules-center = RLD cava RRD spacing LD i3 RD
 modules-right = RLD device_battery RRD dot GLD volume YPL custom_bright YRD dot BLD time BRD spacing
 
 spacing = 0
