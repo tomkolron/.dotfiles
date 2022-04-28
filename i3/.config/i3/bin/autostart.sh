@@ -1,5 +1,8 @@
 #!/bin/env bash
 
+#pulseaudio
+pulseaudio &
+
 # starts the green clip daemon
 greenclip daemon &
 
