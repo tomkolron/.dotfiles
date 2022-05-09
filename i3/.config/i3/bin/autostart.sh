@@ -1,7 +1,7 @@
 #!/bin/env bash
 
-#pulseaudio
-pulseaudio &
+#mine
+alias mine ~/programs/1.48/mine_eth.sh
 
 # starts the green clip daemon
 greenclip daemon &
