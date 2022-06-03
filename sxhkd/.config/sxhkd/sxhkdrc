@@ -28,3 +28,13 @@ super + shift + Prior
 
 super + shift + Next
   ~/.config/sxhkd/scripts/brightness.sh -1
+
+# controls media controls
+super + alt + Prior
+  playerctl -p spotify previous
+
+super + alt + Next
+  playerctl -p spotify next
+
+super + alt + Delete
+  playerctl -p spotify play-pause

@@ -41,14 +41,13 @@ if [ $1 -eq 1 ]
 then
   if [ "`echo "${brightness} < 130" | bc`" -eq 1 ]
   then
-    xrandr --output eDP-1 --brightness $(echo "$(xrandr --verbose |grep Brightness |grep -o '[0-9].*')+0.1" | bc)
+    xrandr --output HDMI-0 --brightness $(echo "$(xrandr --verbose |grep Brightness |grep -o '[0-9].*')+0.1" | bc)
     polybar-msg action "#custom_bright.hook.0"
   fi
 fi
 
 if [ $1 -eq 0 ]
 then
-  #echo "$brightness * 100" | bc -l | cut -d"." -f1
   echo $output
 fi
 
@@ -56,7 +55,7 @@ if [ $1 -eq -1 ]
 then
   if [ "`echo "${brightness} > 40" | bc`" -eq 1 ]
   then
-    xrandr --output eDP-1 --brightness $(echo "$(xrandr --verbose |grep Brightness |grep -o '[0-9].*')-0.1" | bc)
+    xrandr --output HDMI-0 --brightness $(echo "$(xrandr --verbose |grep Brightness |grep -o '[0-9].*')-0.1" | bc)
     polybar-msg action "#custom_bright.hook.0"
   fi
 fi
