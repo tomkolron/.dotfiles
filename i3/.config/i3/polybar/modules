@@ -386,7 +386,7 @@ label-layout-padding = 0
 label-indicator-on = ^
 format = <label-layout><label-indicator>
 format-spacing = 0
-format-background = ${color.purple}
+format-background = ${color.red}
 format-foreground = ${color.text-color}
 
 [module/cava]
@@ -396,8 +396,24 @@ exec = $HOME/.config/i3/polybar/scripts/cava.sh
 format = <label>
 format-font = 5
 format-foreground = ${color.text-color}
-format-background = ${color.red}
+format-background = ${color.purple}
 label = %output%
-click-left = playerctl play-pause
-scroll-up = playerctl previous
-scroll-down = playerctl next
+click-left = playerctl -p spotify play-pause
+
+[module/next]
+type=custom/text
+content = 怜
+content-foreground= ${color.text-color}
+content-background = ${color.purple} 
+content-font = 4
+content-padding=1
+click-left=playerctl -p spotify next
+
+[module/previous]
+type=custom/text
+content = 玲
+content-foreground= ${color.text-color}
+content-background = ${color.purple} 
+content-font = 4
+content-padding=1
+click-left=playerctl -p spotify previous
