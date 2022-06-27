@@ -9,7 +9,6 @@ super + shift + t
 # rofi - grave=~ {clipboard, drun, windows,calculator}
 ctrl + grave ; {grave,1,Tab,c} 
   rofi {-modi "clipboard:greenclip print" -show clipboard -run-command '\{cmd\}',-show drun -show-icons,-show window,-show calc -modi calc -no-show-match -no-sort -calc-command "echo -n '\{result\}' | xclip"}
-
 # spt - {open,play/pause}
 ctrl + grave ; s ; {o,p}
   {gnome-terminal -- tmux a -t spt,spt playback -t}
@@ -28,3 +27,10 @@ super + shift + Prior
 
 super + shift + Next
   ~/.config/sxhkd/scripts/brightness.sh -1
+
+super + shift + p
+  rofi -show power-menu -modi power-menu:~/.config/i3/polybar/scripts/power-menu.sh
+
+# launch an AppImage
+ctrl + grave ; a
+    $HOME/programs/$(ls $HOME/programs | rofi -dmenu)

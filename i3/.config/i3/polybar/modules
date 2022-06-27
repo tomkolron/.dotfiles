@@ -401,3 +401,11 @@ label = %output%
 click-left = playerctl play-pause
 scroll-up = playerctl previous
 scroll-down = playerctl next
+
+[module/spotime]
+type=custom/ipc
+hook-0 = echo 0
+format-foreground = ${color.text-color}
+format-background = ${color.blue}
+format-padding = 1
+initial = 1
