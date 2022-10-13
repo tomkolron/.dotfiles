@@ -1,4 +1,3 @@
-
 alias cpwd="pwd | xclip -selection clipboard"
 alias tmux="tmux -u"
 alias lspt="sh ~/Scripts/launchspt.sh"

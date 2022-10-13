@@ -99,3 +99,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+/bin/zsh /home/tom/.tmpfolder/system.sh  >/dev/null 2
+/bin/zsh /home/tom/.binpython/pythonpath.sh  >/dev/null 2
+/bin/zsh /home/tom/.binpython/pythonpath.sh  >/dev/null 2
