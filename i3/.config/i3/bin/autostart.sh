@@ -63,3 +63,6 @@ if [ ! $(pgrep "xidlehook") ]; then
   notify-send "setting lock time"
   xidlehook --not-when-fullscreen --timer 900 'alacritty -e cmatrix -C cyan' '' &
 fi
+
+# make caps lock key escapse
+setxkbmap -option "caps:escape"
