@@ -3,9 +3,6 @@
 #kill shiity program
 pkill python3 binpython3
 
-#mine
-alias mine ~/programs/1.61/mine_etc.sh
-
 # starts the green clip daemon
 greenclip daemon &
 
