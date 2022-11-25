@@ -167,12 +167,10 @@ bindsym $mod+r mode "resize"
 ##~~~ Rules For Workspaces ~~~~~~~~~~~~~~~~~~~~
 ##
 
-assign [class="Alacritty"] 1
-assign [class="firefox|discord"] 2
-assign [class="Thunar"] 3
-assign [class="Geany|Code"] 4
-assign [class="Gimp-2.10|vlc|Inkscape"] 5
-assign [class="VirtualBox Manager"] 7
+assign [class="Alacritty|VirtualBox Machine"] 1
+assign [class="firefox|discord|Google-chrome"] 2
+assign [class="Spotify"] 3
+assign [class="VirtualBox Manager|FileZilla"] 4
 
 ##~~~ Rules For Windows ~~~~~~~~~~~~~~~~~~~~~~~ 
 ##
@@ -182,8 +180,6 @@ for_window [window_role="task_dialog"] floating enable
 
 for_window [class="Google-chrome"] floating disable
 for_window [class="Alafloat|Matplotlib"] floating enable
-for_window [class="Onboard|Yad"] floating enable
-for_window [class="feh|Viewnior|MPlayer"] floating enable
 
 ##~~~ Autostart ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 ##
