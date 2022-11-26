@@ -4,7 +4,7 @@ super + shift + Return
 
 # terminal emulator - just alacritty 
 super + shift + t
-  alacritty -e tmux -u
+  alacritty -e zsh
 
 # rofi - grave=~ {clipboard, drun, windows,calculator}
 ctrl + grave ; {grave,1,Tab,c} 
