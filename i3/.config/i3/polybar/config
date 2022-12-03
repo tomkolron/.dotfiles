@@ -51,7 +51,7 @@ font-3 = "Hack Nerd Font:size=17;4"
 
 # Default
 modules-left = spacing BLD powermenu BRD dot GLD cpu YPL memory CPL filesystem CRD dot MLD ip MRD dot RLD xkeyboard RRD
-modules-center = PLD previous next PRD spacing LD i3 RD
+modules-center = PLD previous cava next PRD spacing LD i3 RD
 modules-right = GLD volume YPL custom_bright YRD dot BLD time BRD spacing
 
 spacing = 0
