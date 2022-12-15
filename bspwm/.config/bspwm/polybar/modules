@@ -155,61 +155,68 @@ animation-charging-framerate = 750
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-[module/i3]
-type = internal/i3
+[module/bspwm]
+type = internal/bspwm
 
 pin-workspaces = true
-strip-wsnumbers = true
-index-sort = true
+inline-mode = false
 
 enable-click = true
 enable-scroll = true
-wrapping-scroll = false
-reverse-scroll = false
+reverse-scroll = true
 
 fuzzy-match = true
 
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
-ws-icon-6 = 7;漣
-format = <label-state><label-mode>
-format-background = ${color.altblack}
+; ws-icon-[0-9]+ = label;icon
+; Note that the label needs to correspond with the bspwm workspace name
+ws-icon-0 = terminal;
+ws-icon-1 = code;
+ws-icon-2 = web;
+ws-icon-3 = music; 
+ws-icon-4 = files;
+ws-icon-default = 
 
-label-mode = %mode%
-label-mode-padding = 1
-label-mode-background = ${color.altblack}
-label-mode-foreground = ${color.yellow}
+format = <label-state>
 
-label-focused = %icon%
+label-monitor = %name%
+
+; If any values for label-dimmed-N are defined, the workspace/mode
+; colors will get overridden with those values if the monitor is out of focus
+; To only override workspaces in a specific state, use:
+;   label-dimmed-focused
+;   label-dimmed-occupied
+;   label-dimmed-urgent
+;   label-dimmed-empty
+;label-dimmed-foreground = ${color.foreground}
+;label-dimmed-underline = ${color.yellow}
+;label-dimmed-focused-background = ${color.background}
+
+label-focused = %index%
 label-focused-foreground = ${color.blue}
 label-focused-background = ${color.altblack}
+;label-focused-underline = ${color.red}
+label-focused-padding = 1
 
-label-unfocused = %icon%
+label-occupied = %index%
 label-unfocused-foreground = ${color.foreground}
 label-unfocused-background = ${color.altblack}
+label-occupied-underline = ${color.altblack}
+label-occupied-padding = 1
 
-label-visible = %icon%
-label-visible-foreground = ${color.green}
-label-visible-background = ${color.altblack}
-
-label-urgent = %icon%
+label-urgent = %index%
 label-urgent-foreground = ${color.red}
 label-urgent-background = ${color.altblack}
-
-label-focused-padding = 1
-label-unfocused-padding = 1
-label-visible-padding = 1
+;label-urgent-underline = ${color.red}
 label-urgent-padding = 1
 
-;label-separator = |
-;label-separator-padding = 0
-;label-separator-foreground = ${color.foreground}
-;label-separator-background = ${color.altblack}
+label-empty = %index%
+label-empty-foreground = ${color.foreground}
+label-empty-padding = 1
 
+; Separator in between workspaces
+label-separator = " "
+label-separator-padding = 0
+;label-separator-foreground = ${color.yellow} 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/cpu]
@@ -392,7 +399,7 @@ format-foreground = ${color.text-color}
 [module/cava]
 type = custom/script
 tail = true
-exec = $HOME/.config/i3/polybar/scripts/cava.sh
+exec = $HOME/.config/bspwm/polybar/scripts/cava.sh
 format = <label>
 format-font = 5
 format-foreground = ${color.text-color}

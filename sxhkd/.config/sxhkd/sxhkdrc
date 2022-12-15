@@ -1,35 +1,32 @@
-# terminal emulator - alacritty with tmux last session
-super + shift + Return 
-  alacritty -e tmux a
+# reload sxhkd config
+super + Escape
+    pkill -USR1 -x sxhkd
 
-# terminal emulator - just alacritty 
-super + shift + t
-  alacritty -e zsh
+# open Alacritty
+super + shift + Return
+   alacritty
 
-# rofi - grave=~ {clipboard, drun, windows,calculator}
-ctrl + grave ; {grave,1,Tab,c} 
-  rofi {-modi "clipboard:greenclip print" -show clipboard -run-command '\{cmd\}',-show drun -show-icons,-show window,-show calc -modi calc -no-show-match -no-sort -calc-command "echo -n '\{result\}' | xclip"}
+# Rofi & dmenu
+# launch any application
+super + d
+    rofi -show drun -show-icons -font "Noto Sans 14"
 
-# spt - {open,play/pause}
-ctrl + grave ; s ; {o,p}
-  {gnome-terminal -- tmux a -t spt,spt playback -t}
+# take a screenshot
+ctrl + alt + s
+    flameshot gui
 
-# list keybinding
-super + shift + slash
-  $HOME/Scripts/sxhkd-help.sh 
+#logout
+super + x
+    bspc quit 
 
-# make sxhkd reload its configuration files
-super + shift + Escape
-	pkill -USR1 -x sxhkd
-
-# controls the brightness
+#brightness
 super + shift + Prior
   ~/.config/sxhkd/scripts/brightness.sh 1
 
 super + shift + Next
   ~/.config/sxhkd/scripts/brightness.sh -1
 
-# controls media controls
+#audio
 super + alt + Prior
   playerctl -p spotify previous
 
@@ -38,3 +35,218 @@ super + alt + Next
 
 super + alt + Delete
   playerctl -p spotify play-pause
+
+#################################################################
+#################################################################
+
+#Toggle fullscreen of window
+super + f
+	bspc node --state \~fullscreen
+
+# Toggle pseudo tiling of window
+super + p
+	bspc node --state \~pseudo_tiled
+
+#kill - close focused application
+super + c
+	bspc node -c
+
+#################################################################
+# SUPER KEYS
+#################################################################
+
+# Focus selected desktop
+# super + Tab
+# 	bspc desktop -f '^{1-9,10}'
+
+# Increase/decrease window gap on focused desktop
+
+# set the window state
+super + space
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+#################################################################
+# SUPER + ALT KEYS
+#################################################################
+
+# Move floating window
+super + alt + {_,shift + }{Left,Down,Up,Right}
+	~/.config/bspwm/scripts/move-window {_,edge-}{west,south,north,east}
+
+#################################################################
+# SUPER + SHIFT KEYS
+#################################################################
+
+
+#Reload bspwm
+super + shift + r
+	~/.config/bspwm/bspwmrc
+
+# Focus/swap windows by direction
+super + {_,shift + }{h,j,k,l}
+	bspc node --{focus,swap} {west,south,north,east}
+
+# Flip layout vertically/horizontally
+super + {_,shift + }a
+	bspc node @/ --flip {vertical,horizontal}
+
+# Move focused window to other monitor
+super + shift + Left
+	bspc node -m next --follow
+
+# Move focused window to other monitor
+super + shift + Right
+		bspc node -m next --follow
+
+# Move focused window to other monitor
+super + shift + Up
+	bspc node -m next --follow
+
+# Move focused window to other monitor
+super + shift + Down
+		bspc node -m next --follow
+
+#################################################################
+# SUPER + CONTROL KEYS
+#################################################################
+
+# Focus/swap windows by direction
+super + ctrl + {Left,Down,Up,Right}
+	bspc node --{focus} {west,south,north,east}
+
+# Contract tiled space
+super + ctrl + {h,j,k,l}
+	bspc node {@east -r -10,@north -r +10,@south -r -10,@west -r +10}
+
+# Preselect the splitting areh for next window on leaf/parent
+super + ctrl + {u,i,o,p}
+	bspc node --presel-dir \~{west,south,north,east}
+
+# Define splitting ratio for next window on leaf/parent
+super + ctrl + {_,shift +}{1-9}
+	bspc node {_,@/} --presel-ratio 0.{1-9}
+
+
+#################################################################
+# ALT KEYS
+#################################################################
+
+#Focus selected desktop
+alt + Tab
+	bspc desktop -f '^{1-9,10}'
+
+#Focus selected desktop
+alt + shift + Tab
+	bspc desktop -f '^{1-9,10}'
+
+#Rotate desktop
+alt + space
+	bspc node @/ --rotate {90,-90}
+
+#################################################################
+# ALT + SHIFT KEYS
+#################################################################
+
+# Expand tiled space
+alt + shift + {h,j,k,l}
+	bspc node {@west -r -10,@south -r +10,@north -r -10,@east -r +10}
+
+#################################################################
+# CTRL + ALT KEYS
+#################################################################
+
+#################################################################
+#################################################################
+##################   AZERTY/QWERTY/ ... KEYBOARD#################
+#################################################################
+#################################################################
+
+#Switch here between qwerty and azerty or make new one
+#Focus selected desktop FOR QWERTY KEYBOARDS
+#super + {1-9,0}
+#	bspc desktop -f '^{1-9,10}'
+
+#alt + {1-9,0}
+#	bspc desktop -f '^{11-19,20}'
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop --focus,node --to-desktop} 'focused:^{1-9,10}'
+
+#Focus selected desktop	FOR BELIGIAN AZERTY KEYBOARDS
+#super + {ampersand,eacute,quotedbl,apostrophe,parenleft,section,egrave,exclam,ccedilla,agrave}
+#    bspc desktop -f '^{1-9,10}'
+
+#Focus selected desktop	FOR FRNECH AZERTY KEYBOARDS
+#super + {ampersand,eacute,quotedbl,apostrophe,parenleft,minus,egrave,underscore,ccedilla,agrave}
+#    bspc desktop -f '^{1-9,10}'
+
+#################################################################
+
+# Switch here between qwerty and azerty or make new one
+# Move window to selected desktop FOR QWERTY KEYBOARDS
+super + shift + {1-9,0}
+    id=$(bspc query -N -n); bspc node -d ^{1-9,10}; bspc node -f ${id}}
+
+# Move window to selected desktop FOR AZERTY KEYBOARDS
+# super + shift + {ampersand,eacute,quotedbl,apostrophe,parenleft,section,egrave,exclam,ccedilla,agrave}
+#    id=$(bspc query -N -n); bspc node -d ^{1-9,10}; bspc node -f ${id}}
+
+#################################################################
+
+
+## super & mouse scroll
+
+# Focused desktop window gap
+super + button{4,5}
+  bspc config -d focused window_gap $((`bspc config -d focused window_gap` {-,+} 2 ))
+
+## Eyal addon ##
+
+# terminal emulator - alacritty with tmux last session
+super + shift + Return 
+  alacritty -e tmux a
+
+# terminal emulator - just alacritty 
+super + shift + t
+  alacritty
+
+# rofi - grave=~ {clipboard, drun, windows,calculator}
+ctrl + grave ; {grave,1,Tab,c} 
+  rofi {-modi "clipboard:greenclip print" -show clipboard -run-command '\{cmd\}',-show drun -show-icons,-show window,-show calc -modi calc -no-show-match -no-sort -calc-command "echo -n '\{result\}' | xclip"}
+
+# launch an AppImage
+ctrl + grave ; a
+    $HOME/AppImages/$(ls $HOME/AppImages | rofi -i -dmenu)
+
+# spt - {open,play/pause}
+ctrl + grave ; s ; {o,p}
+  {alacritty --class sptScratch\,sptScratch -e spt, spt playback -t}
+
+# open calculator
+super + shift + c
+  gnome-calculator
+  
+# lock the screen
+super + shift +x
+  i3lock -t -i $HOME/Pictures/wallpapers/lockImage.png 
+
+# list keybinding
+super + shift + ctrl + slash
+  ~/.config/bspwm/scripts/sxhkd-help.sh
+
+# cycle thrue desktops on all monitors connected
+super + ctrl + bracket{left,right}
+    cycle_dir={prev,next}; \
+    bspc desktop "$\{cycle_dir\}.local" -f; \
+    for mon_id in $(bspc query -M -m '.!focused'); do \
+        bspc desktop "$\{mon_id\}:focused#$\{cycle_dir\}.local" -a; \
+    done
+
+# focus the last node/desktop
+super + {grave,Tab}
+	bspc {node,desktop} -f last
+
+# kill any window
+super + shift + ctrl + x
+    xkill

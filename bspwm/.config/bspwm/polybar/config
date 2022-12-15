@@ -4,10 +4,10 @@
 margin-bottom = 0
 margin-top = 0
 
-include-file = ~/.config/i3/polybar/colors
-include-file = ~/.config/i3/polybar/modules
-include-file = ~/.config/i3/polybar/decor
-include-file = ~/.config/i3/polybar/system
+include-file = ~/.config/bspwm/polybar/colors
+include-file = ~/.config/bspwm/polybar/modules
+include-file = ~/.config/bspwm/polybar/decor
+include-file = ~/.config/bspwm/polybar/system
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -51,7 +51,7 @@ font-3 = "Hack Nerd Font:size=17;4"
 
 # Default
 modules-left = spacing BLD powermenu BRD dot GLD cpu YPL memory CPL filesystem CRD dot MLD ip MRD dot RLD xkeyboard RRD
-modules-center = PLD previous cava next PRD spacing LD i3 RD
+modules-center = PLD previous cava next PRD spacing LD bspwm RD
 modules-right = GLD volume YPL custom_bright YRD dot BLD time BRD spacing
 
 spacing = 0

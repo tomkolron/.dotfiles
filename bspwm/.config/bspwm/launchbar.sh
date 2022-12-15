@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ## Files and Directories
-DIR="$HOME/.config/i3/polybar"
+DIR="$HOME/.config/bspwm/polybar"
 SFILE="$DIR/system"
 RFILE="$DIR/.system"
 MFILE="$DIR/.module"
