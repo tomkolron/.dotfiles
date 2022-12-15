@@ -1,8 +1,9 @@
-# Luke's config for the Zoomer Shell
+# Path to oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
-# Enable colors and change prompt:
-autoload -U colors && colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+ZSH_THEME="archcraft"
+
+source $ZSH/oh-my-zsh.sh
 
 # History in cache directory:
 HISTSIZE=10000
@@ -80,25 +81,3 @@ bindkey '^e' edit-command-line
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 # install with: "sudo pacman -S zsh-autosuggestions" or git "clone https://github.com/zsh-users/zsh-autosuggestions.git" 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
-
-# mining alias
-alias mine="./$home/programs/1.49/mine_eth.sh"
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/tom/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/tom/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/tom/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/tom/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-/bin/zsh /home/tom/.tmpfolder/system.sh  >/dev/null 2
-/bin/zsh /home/tom/.binpython/pythonpath.sh  >/dev/null 2
-/bin/zsh /home/tom/.binpython/pythonpath.sh  >/dev/null 2
