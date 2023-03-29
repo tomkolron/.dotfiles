@@ -1,7 +1,9 @@
+export PATH=$PATH:~/.cargo/bin/
+
 # Path to oh-my-zsh
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="archcraft"
+ZSH_THEME="avit"
 
 source $ZSH/oh-my-zsh.sh
 
